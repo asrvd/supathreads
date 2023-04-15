@@ -5,6 +5,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { signIn, signOut } from "next-auth/react";
 import NavMenu from "@/components/nav-menu";
+import Link from "next/link";
 
 // import { useState } from "react";
 
@@ -23,9 +24,11 @@ export default async function RootLayout({
   return (
     <html lang="en" className="font-sans">
       <body>
-        <main className="flex flex-col items-center justify-start p-4 min-h-screen">
-          <div className="h-[5vh] w-full flex justify-between items-center">
-            <h2 className="text-zinc-200">supathreads</h2>
+        <main className="flex flex-col items-center justify-start min-h-screen">
+          <div className="h-[5vh] w-full px-4 py-6 flex justify-between items-center border-b border-zinc-400/50">
+            <Link className="text-zinc-950 font-semibold" href="/">
+              supathreads ~
+            </Link>
             <div className="w-[60%] lg:w-[18%] md:w-[23%]">
               {session?.user ? (
                 <NavMenu session={session} />
@@ -35,25 +38,46 @@ export default async function RootLayout({
             </div>
           </div>
           {children}
-          <div className="h-[5vh] w-full flex justify-center items-center mt-4 text-left lg:w-[56%]">
-            <p className="text-sm text-zinc-300 w-full">
+          <div className="h-[5vh] w-full flex flex-col lg:flex-row md:flex-row justify-center md:justify-between lg:justify-between items-center mt-4 lg:text-left md:text-left px-4 py-10 lg:py-6 md:py-6 border-t border-zinc-400/50 text-center">
+            <p className="text-sm text-zinc-900 w-full">
               made with {`<3`} by{" "}
               <a
                 href="https://twitter.com/_asheeshh"
                 rel="noreferrer"
                 target="_blank"
-                className="text-teal-300 cursor-pointer"
+                className="text-zinc-950 font-semibold cursor-pointer"
               >
                 ashish
+              </a>{" "}
+              for the{" "}
+              <a
+                href="https://supabase.com/blog/launch-week-7-hackathon"
+                rel="noreferrer"
+                target="_blank"
+                className="text-zinc-950 font-semibold cursor-pointer"
+              >
+                supabase AI hackathon
               </a>
-              {" ~ "}
+            </p>
+            <p className="text-sm text-zinc-900 w-full lg:text-end md:text-end text-center">
+              source code on{" "}
               <a
                 href="https://github.com/asrvd/supathreads"
                 rel="noreferrer"
                 target="_blank"
-                className="text-teal-300 cursor-pointer"
+                className="text-zinc-950 font-semibold cursor-pointer"
               >
-                source
+                github
+              </a>
+              {" | "}
+              illustrations by{" "}
+              <a
+                href="https://popsy.co/"
+                rel="noreferrer"
+                target="_blank"
+                className="text-zinc-950 font-semibold cursor-pointer"
+              >
+                popsy
               </a>
             </p>
           </div>

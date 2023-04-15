@@ -11,8 +11,8 @@ export default async function Create() {
       {session?.user ? (
         <ThreadForm />
       ) : (
-        <div className="flex flex-col items-center justify-center h-screen">
-          <h2 className="text-2xl font-semibold text-zinc-100 mb-4">
+        <div className="flex flex-col items-center justify-center h-screen p-4">
+          <h2 className="text-2xl font-semibold text-zinc-950 mb-4">
             You need to be logged in to create a thread
           </h2>
           <SignIn />

@@ -122,21 +122,21 @@ export default function ThreadForm() {
   };
 
   return (
-    <div className="lg:w-[56%] w-full flex flex-col gap-2 justify-start items-center">
-      <h2 className="text-xl font-semibold w-full bg-clip-text text-transparent bg-gradient-to-b from-teal-400 via-sky-200 to-indigo-400">
+    <div className="lg:w-[56%] w-full flex flex-col gap-2 justify-start items-center p-4 my-6">
+      <h2 className="text-xl font-bold w-full bg-clip-text text-transparent bg-gradient-to-b from-zinc-900 via-neutral-800 to-stone-900">
         Create a new thread
       </h2>
       <div className="flex flex-col lg:flex-row md:flex-row gap-4 w-full">
         <div className="w-full">
           <label
             htmlFor="numberOfTweets"
-            className="self-start text-sm mb-1 text-zinc-300"
+            className="self-start text-sm mb-1 text-zinc-700"
           >
             Number of tweets (1 - 6)
           </label>
           <input
             type="number"
-            className="w-full bg-zinc-900/50 text-zinc-100 focus:bg-zinc-900 transition-all border focus:border-sky-300/60 duration-200 border-indigo-300/60 rounded-md p-2 outline-none"
+            className="w-full bg-zinc-200 text-zinc-900 focus:bg-zinc-200/50 transition-all border border-zinc-300/60 shadow-smfocus:border-zinc-500/50 duration-200 rounded-md p-2 outline-none"
             max={6}
             min={1}
             placeholder="Number of tweets"
@@ -147,13 +147,13 @@ export default function ThreadForm() {
         <div className="w-full">
           <label
             htmlFor="tweetType"
-            className="self-start text-sm mb-1 text-zinc-300"
+            className="self-start text-sm mb-1 text-zinc-700"
           >
             Tweet type
           </label>
           <select
             value={tweetType}
-            className="w-full bg-zinc-900/50 text-zinc-100 focus:bg-zinc-900 transition-all border focus:border-sky-300/60 duration-200 border-indigo-300/60 rounded-md p-2 outline-none"
+            className="w-full bg-zinc-200 text-zinc-900 focus:bg-zinc-200/50 transition-all border border-zinc-300/60 shadow-sm focus:border-zinc-500/50 duration-200 rounded-md p-2 outline-none"
             onChange={(e) => setTweetType(e.target.value as TweetType)}
           >
             <option value="short">Short</option>
@@ -165,13 +165,13 @@ export default function ThreadForm() {
       <div className="w-full">
         <label
           htmlFor="article"
-          className="self-start text-sm mb-1 text-zinc-300"
+          className="self-start text-sm mb-1 text-zinc-700"
         >
           Article (max 17k characters)
         </label>
         <textarea
           placeholder="Enter your article"
-          className="w-full min-h-[400px] bg-zinc-900/50 text-zinc-100 focus:bg-zinc-900/70 transition-all border focus:border-sky-300/60 duration-200 border-indigo-300/60 rounded-md p-2 outline-none scrollbar-thin scrollbar-track-transparent scrollbar-thumb-indigo-200/60 scrollbar-thumb-rounded-md"
+          className="w-full bg-zinc-200 text-zinc-900 focus:bg-zinc-200/50 transition-all h-[400px] border border-zinc-300/60 shadow-sm focus:border-zinc-500/50 duration-200 rounded-md p-2 outline-none scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-500/50 scrollbar-thumb-rounded-md"
           onChange={(e) => setArticle(e.target.value)}
         />
       </div>
@@ -181,15 +181,15 @@ export default function ThreadForm() {
       </div>
       {generatedTweets.trim() !== "" && (
         <div className="w-full whitespace-pre-line text-zinc-200 flex flex-col gap-2 mt-4">
-          <h2 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-teal-400 via-sky-200 to-indigo-400">
+          <h2 className="text-xl font-bold w-full bg-clip-text text-transparent bg-gradient-to-b from-zinc-900 via-neutral-800 to-stone-900">
             Generated tweets
           </h2>
           <div className="relative flex flex-col gap-4 z-0 mb-2">
-            <div className="absolute w-full h-full left-5 z-[-100] top-0 bg-transparent border-l border-sky-200/60"></div>
+            <div className="absolute w-full h-full left-5 z-[-100] top-0 bg-transparent border-l border-zinc-400/60"></div>
             {generatedTweets.split("\n\n").map((tweet, index) => (
               <p
                 key={index}
-                className="bg-zinc-900 relative z-[100] border border-indigo-300/60 rounded-md p-4 pr-10 text-zinc-200"
+                className="bg-zinc-200 shadow-md relative z-[100] border border-zinc-300/60 rounded-md p-4 pr-10 text-zinc-900"
               >
                 {tweet.trim().slice(3)}
                 <CopyButton text={tweet.trim().slice(3)} />
@@ -202,8 +202,8 @@ export default function ThreadForm() {
               <div className="flex gap-4 mb-4">
                 <input
                   type="text"
-                  placeholder="Thread name"
-                  className="w-full bg-zinc-900/50 text-zinc-100 focus:bg-zinc-900 transition-all border focus:border-sky-300/60 duration-200 border-indigo-300/60 rounded-md p-2 outline-none"
+                  placeholder="Thread name / title"
+                  className="w-full bg-zinc-200 text-zinc-900 focus:bg-zinc-200/50 transition-all border border-zinc-300/60 shadow-sm focus:border-zinc-500/50 duration-200 rounded-md p-2 outline-none"
                   value={threadTitle}
                   onChange={(e) => setThreadTitle(e.target.value)}
                 />

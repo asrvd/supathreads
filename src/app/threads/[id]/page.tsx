@@ -57,17 +57,17 @@ export default async function Thread({
   return (
     <>
       {session?.user ? (
-        <div className="lg:w-[56%] w-full">
-          <h2 className="text-3xl font-black w-full bg-clip-text text-transparent bg-gradient-to-b from-teal-400 via-sky-200 to-indigo-400 mb-6">
+        <div className="lg:w-[56%] w-full p-4 my-6">
+          <h2 className="text-3xl font-bold mb-4 w-full bg-clip-text text-transparent bg-gradient-to-b from-zinc-900 via-neutral-800 to-stone-900">
             {thread.title}
           </h2>
           <div className="flex flex-col gap-4 w-full ">
             {thread.tweets.map((tweet) => (
               <div
                 key={tweet.id}
-                className="p-4 pr-10 relative bg-zinc-900/50 rounded-md shadow-xl border border-indigo-300/60"
+                className="p-4 pr-10 relative bg-zinc-200 rounded-md shadow-md border border-zinc-300/60"
               >
-                <p className="text-zinc-200 text-base">{tweet.content}</p>
+                <p className="text-zinc-900 text-base">{tweet.content}</p>
                 <CopyButton text={tweet.content} />
               </div>
             ))}
@@ -75,7 +75,7 @@ export default async function Thread({
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center h-screen">
-          <h2 className="text-2xl font-semibold text-zinc-100 mb-4">
+          <h2 className="text-2xl font-semibold text-zinc-900 mb-4">
             You need to be logged in to create a thread
           </h2>
           <SignIn />

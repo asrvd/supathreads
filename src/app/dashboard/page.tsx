@@ -46,23 +46,23 @@ export default async function Dashboard() {
   return (
     <>
       {session?.user ? (
-        <div className="lg:w-[56%] w-full">
-          <h2 className="text-3xl font-black w-full bg-clip-text text-transparent bg-gradient-to-b from-teal-400 via-sky-200 to-indigo-400 mb-6">
+        <div className="lg:w-[56%] w-full p-4 my-6">
+          <h2 className="text-3xl font-bold w-full bg-clip-text text-transparent bg-gradient-to-b from-zinc-900 via-neutral-800 to-stone-900 mb-4">
             Your Threads
           </h2>
           <div className="flex flex-col gap-4 w-full ">
             {threads?.map((thread) => (
               <div
                 key={thread.id}
-                className="p-4 bg-zinc-900/50 rounded-md shadow-xl border border-indigo-300/60"
+                className="p-4 bg-zinc-200 rounded-md shadow-md border border-zinc-300/60"
               >
                 <a
-                  className="text-lg font-semibold cursor-pointer text-zinc-100 hover:underline underline-offset-2"
+                  className="text-lg font-semibold cursor-pointer text-zinc-950 hover:underline underline-offset-2"
                   href={`/threads/${thread.id}`}
                 >
                   {thread.title}
                 </a>
-                <p className="text-zinc-400 mt-4 text-sm">
+                <p className="text-zinc-700 mt-4 text-sm">
                   created {thread.createdAt.toLocaleDateString()}
                 </p>
               </div>

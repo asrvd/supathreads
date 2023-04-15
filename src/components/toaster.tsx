@@ -8,8 +8,8 @@ export default function ToastContainer() {
       position="top-right"
       toastOptions={{
         style: {
-          background: "#18181b",
-          color: "#f4f4f5",
+          background: "#e4e4e7",
+          color: "#18181b",
         },
       }}
     />

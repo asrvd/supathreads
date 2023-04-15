@@ -49,23 +49,23 @@ export default function NavMenu({ session }: { session: Session }) {
         src={session.user?.image as string}
         ref={imageRef}
         alt="user"
-        className="rounded-full self-end h-8 w-8 cursor-pointer hover:border border-indigo-300/60 duration-200 ease-in-out"
+        className="rounded-full self-end h-8 w-8 cursor-pointer hover:border border-zinc-500/50 duration-200 ease-in-out"
         onClick={() => setIsOpen(!isOpen)}
       />
       {isOpen && (
-        <div className="absolute top-10 right-0 w-full h-auto flex flex-col bg-zinc-900 border border-indigo-300/60 rounded-md p-1 divide-y divide-indigo-300/60">
+        <div className="absolute top-10 right-0 w-full h-auto flex flex-col bg-zinc-200 border-zinc-300/60 shadow-2xl rounded-md p-1 divide-y divide-zinc-400/50 z-[1000]">
           <div className="w-full px-2 py-1 text-sm">
-            <h2 className="m-0 leading-none text-zinc-100 font-semibold">
+            <h2 className="m-0 leading-none text-zinc-950 font-semibold">
               {session.user?.name}
             </h2>
-            <p className="m-0 text-zinc-300">{session.user?.email}</p>
+            <p className="m-0 text-zinc-800">{session.user?.email}</p>
           </div>
           <div className="w-full flex flex-col py-1 text-sm" ref={ref}>
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.route}
-                className="text-zinc-200 rounded-md hover:bg-zinc-800/80 px-2 py-2"
+                className="text-zinc-900 rounded-md hover:bg-zinc-300/80 px-2 py-2"
               >
                 {item.label}
               </Link>
@@ -73,7 +73,7 @@ export default function NavMenu({ session }: { session: Session }) {
           </div>
           <div className="w-full pt-1 text-sm">
             <button
-              className="text-zinc-200 w-full rounded-md hover:bg-zinc-800 px-2 py-2 text-left"
+              className="text-zinc-900 w-full rounded-md hover:bg-zinc-300/80 px-2 py-2 text-left"
               onClick={() => signOut()}
             >
               Sign out

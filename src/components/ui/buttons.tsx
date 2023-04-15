@@ -10,7 +10,7 @@ export function NavButton({ label, route }: { label: string; route: string }) {
 
   return (
     <button
-      className="flex justify-center items-center bg-zinc-900/50 text-zinc-100 px-4 py-3 rounded-md text-center font-semibold text-sm hover:bg-zinc-900 transition-all border hover:border-sky-300/60 duration-200 border-indigo-300/60"
+      className="flex justify-center items-center bg-zinc-200 text-zinc-950 px-4 py-3 rounded-md text-center font-semibold text-sm hover:bg-zinc-200/50 transition-all border duration-200 border-zinc-300/60 hover:border-zinc-500/60 shadow-sm"
       onClick={() => router.push(route)}
     >
       {label}
@@ -29,7 +29,7 @@ export function UtilButton({
 }) {
   return (
     <button
-      className="flex justify-center items-center bg-zinc-900/50 text-zinc-100 px-4 py-3 rounded-md text-center font-semibold text-sm hover:bg-zinc-900 transition-all border hover:border-sky-300/60 duration-200 border-indigo-300/60"
+      className="flex justify-center items-center bg-zinc-200 text-zinc-950 px-4 py-3 rounded-md text-center font-semibold text-sm hover:bg-zinc-200/50 transition-all border duration-200 border-zinc-300/60 hover:border-zinc-500/60 shadow-sm"
       onClick={onClick}
     >
       {label}
@@ -44,7 +44,7 @@ export function CopyButton({ text }: { text: string }) {
 
   return (
     <button
-      className="flex justify-center items-center bg-zinc-900/50 text-zinc-100 p-2 rounded-md text-center font-semibold text-xs hover:bg-zinc-900 transition-all border hover:border-sky-300/60 duration-200 border-indigo-300/60 absolute top-2 right-2"
+      className="flex justify-center items-center bg-zinc-300/80 text-zinc-950 p-2 rounded-md text-center font-semibold text-sm hover:bg-zinc-200/50 transition-all border duration-200 border-zinc-300/60 hover:border-zinc-500/60 shadow-sm absolute top-2 right-2"
       onClick={async () => {
         await navigator.clipboard.writeText(text);
         setCopied(true);
