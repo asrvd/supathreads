@@ -4,6 +4,11 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { prisma } from "@/lib/prisma";
 import { SignIn } from "../actions";
+import type { Metadata } from "next";
+
+export const meta: Metadata = {
+  title: "Dashboard"
+}
 
 const ThreadSchema = z.array(
   z.object({

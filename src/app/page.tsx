@@ -23,7 +23,7 @@ export default async function Home() {
       <img
         src="https://illustrations.popsy.co/white/taking-notes.svg"
         alt="illustration"
-        className="w-[500px] h-[460px] lg:px-4"
+        className="w-[500px] h-[460px] lg:px-4 select-none"
       />
     </section>
   );

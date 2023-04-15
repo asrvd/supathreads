@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-zinc-50 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-500/50 scrollbar-thumb-rounded-md;
+  @apply bg-zinc-50 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-500/50 scrollbar-thumb-rounded-md selection:bg-zinc-300/50;
 }

@@ -2,6 +2,11 @@ import ThreadForm from "@/components/thread-form";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { SignIn } from "../actions";
+import type { Metadata } from "next";
+
+export const meta: Metadata = {
+  title: "Create"
+}
 
 export default async function Create() {
   const session = await getServerSession(authOptions);

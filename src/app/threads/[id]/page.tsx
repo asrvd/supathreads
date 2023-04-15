@@ -5,6 +5,12 @@ import { z } from "zod";
 import { SignIn } from "@/app/actions";
 import { CopyButton } from "@/components/ui/buttons";
 
+import type { Metadata } from "next";
+
+export const meta: Metadata = {
+  title: "Thread"
+}
+
 const ThreadSchema = z.object({
   id: z.string(),
   title: z.string(),
