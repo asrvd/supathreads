@@ -5,6 +5,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { signIn, signOut } from "next-auth/react";
 import NavMenu from "@/components/nav-menu";
+import { SignInSmaller } from "./actions";
 import Link from "next/link";
 
 // import { useState } from "react";
@@ -29,11 +30,11 @@ export default async function RootLayout({
             <Link className="text-zinc-950 font-semibold" href="/">
               supathreads ~
             </Link>
-            <div className="w-[60%] lg:w-[18%] md:w-[23%]">
+            <div className="w-[60%] lg:w-[18%] md:w-[23%] flex justify-end">
               {session?.user ? (
                 <NavMenu session={session} />
               ) : (
-                <button onClick={() => signIn("github")}>Sign in</button>
+                <SignInSmaller label="Sign In" />
               )}
             </div>
           </div>

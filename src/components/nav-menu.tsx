@@ -53,14 +53,17 @@ export default function NavMenu({ session }: { session: Session }) {
         onClick={() => setIsOpen(!isOpen)}
       />
       {isOpen && (
-        <div className="absolute top-10 right-0 w-full h-auto flex flex-col bg-zinc-200 border-zinc-300/60 shadow-2xl rounded-md p-1 divide-y divide-zinc-400/50 z-[1000]">
+        <div
+          className="absolute top-10 right-0 w-full h-auto flex flex-col bg-zinc-200 border-zinc-300/60 shadow-2xl rounded-md p-1 divide-y divide-zinc-400/50 z-[1000] "
+          ref={ref}
+        >
           <div className="w-full px-2 py-1 text-sm">
             <h2 className="m-0 leading-none text-zinc-950 font-semibold">
               {session.user?.name}
             </h2>
             <p className="m-0 text-zinc-800">{session.user?.email}</p>
           </div>
-          <div className="w-full flex flex-col py-1 text-sm" ref={ref}>
+          <div className="w-full flex flex-col py-1 text-sm">
             {navItems.map((item) => (
               <Link
                 key={item.label}
