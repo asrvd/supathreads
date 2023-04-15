@@ -7,7 +7,7 @@ import { CopyButton } from "@/components/ui/buttons";
 
 import type { Metadata } from "next";
 
-export const meta: Metadata = {
+export const metadata: Metadata = {
   title: "Thread"
 }
 

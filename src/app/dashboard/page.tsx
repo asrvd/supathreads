@@ -6,7 +6,7 @@ import { prisma } from "@/lib/prisma";
 import { SignIn } from "../actions";
 import type { Metadata } from "next";
 
-export const meta: Metadata = {
+export const metadata: Metadata = {
   title: "Dashboard"
 }
 
