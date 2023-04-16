@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Supathreads
 
-## Getting Started
+https://user-images.githubusercontent.com/68690233/232323882-a009ff32-83a1-439e-875a-7d0a50977d56.mp4
 
-First, run the development server:
+Create concise and professional twitter threads from your blogs within seconds using AI, built for the [Supabase AI Hackathon](https://supabase.com/blog/launch-week-7-hackathon) and powered by [OpenAI](https://openai.com/). The site is live at [supathreads.vercel.app](https://supathreads.vercel.app).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Inspiration
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Writing eye catching twitter threads is a skill that takes time to master. I wanted to create a tool that would help people create twitter threads from some other source of content, like a blog post, in a matter of seconds, and I knew that I could use OpenAI's AI models to achieve this. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Process
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+Firstly, I designed a basic prototype for the web app and then I started working on the backend. I used NextAuth.js to handle authentication and Supabase to store the user data and the generated threads. The next thing was to find a correct OpenAI model for my use case and GPT-3.5 was the perfect fit. Next I used the OpenAI API to stream the generated tweets to the frontend and display them to the user. The last thing was to let users save the generated threads to their account and I used Supabase to store the threads. And once I was done with the backend, I started working on the frontend. I used TailwindCSS to style the web app and I used Next.js to handle routing and server side rendering. The web app is built using Next.js v13 which helped me a lot getting to know about React Server Components as well as the new app router structure.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Tech Stack
 
-## Learn More
+The web app is made using the [t3 stack](https://create.t3.gg) and I'm using [Supabase](htps://supabase.com) as my database and storage layer. I'm using [OpenAI](https://openai.com/) to generate the tweets.
 
-To learn more about Next.js, take a look at the following resources:
+### How I'm using Supabase
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- to store authenticated user data from NextAuth.js
+- to store the generated threads for users
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Team
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is solo developed by me, [ashish](https://twitter.com/_asheeshh).
